@@ -9,13 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
+import { HeroTileComponent } from './heroes/hero-tile/hero-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HomeComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroTileComponent
   ],
   imports: [
     BrowserModule,

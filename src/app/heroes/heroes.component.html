@@ -1,3 +1,6 @@
-<p>
-  heroes works!
-</p>
+<div class="hero-list" *ngIf="dataLoaded">
+  <div class="hero-tile" *ngFor="let hero of heroData">
+      <app-hero-tile [heroImageUrl]="getHeroImgUrl(hero.name)" [LocalizedHeroName]="hero.localized_name"></app-hero-tile>
+  </div>
+  <div *ngIf="errorMessage">MAKE ME AN ERROR COMPONENT BRUH</div>
+</div>
