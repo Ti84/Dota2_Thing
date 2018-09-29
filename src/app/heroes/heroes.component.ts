@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from './heroes.service';
+import { Hero } from './heroes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
@@ -10,7 +12,7 @@ export class HeroesComponent implements OnInit {
   heroData: any;
   dataLoaded: boolean;
   errorMessage: string;
-  constructor(private heroesService: HeroesService) { }
+  constructor(private heroesService: HeroesService, private router: Router) { }
 
   ngOnInit() {
     this.getHeroData();
@@ -21,15 +23,14 @@ export class HeroesComponent implements OnInit {
     this.errorMessage = '';
     this.heroesService.getHeroInfo().subscribe((heroes: any) => {
       this.dataLoaded = true;
-      this.heroData = heroes;
+      this.heroData = new Hero(heroes).getHeroList();
     }, error => { 
       this.dataLoaded = true;
       this.errorMessage = error
     });
   }
   
-  getHeroImgUrl(rawHeroName) {
-    let urlHeroName = rawHeroName.replace('npc_dota_hero_', '');
-    return `http://cdn.dota2.com/apps/dota2/images/heroes/${urlHeroName}_lg.png`
+  getHeroImgUrl(imagePath) {
+    return `https://api.opendota.com${imagePath}`;
   }
 }

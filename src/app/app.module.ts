@@ -35,3 +35,5 @@ export class AppModule { }
 // Add Tests
 // Add Ngrx Store
 // Make own style library instead of using materials
+// Prettier setup
+// Linter setup

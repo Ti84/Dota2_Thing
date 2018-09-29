@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HeroesService {
 
-  private heroUrl = 'https://api.opendota.com/api/heroes';
+  private heroUrl = 'https://api.opendota.com/api/heroStats';
+
   constructor(private http: HttpClient) { }
 
   getHeroInfo() {
