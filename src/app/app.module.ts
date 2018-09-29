@@ -30,3 +30,8 @@ import { HeroTileComponent } from './heroes/hero-tile/hero-tile.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// To Do:
+// Add Tests
+// Add Ngrx Store
+// Make own style library instead of using materials

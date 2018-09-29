@@ -5,14 +5,10 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './hero-tile.component.html',
   styleUrls: ['./hero-tile.component.scss']
 })
-export class HeroTileComponent implements OnInit {
+export class HeroTileComponent {
   @Input()
   heroImageUrl: string;
 
   @Input()
   LocalizedHeroName: string;
-  constructor() { }
-
-  ngOnInit() {}
-
 }

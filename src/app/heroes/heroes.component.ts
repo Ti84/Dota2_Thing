@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from './heroes.service';
-import { getUrlScheme } from '@angular/compiler';
 
 @Component({
   selector: 'app-heroes',
