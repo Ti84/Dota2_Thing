@@ -35,3 +35,4 @@ export class AppModule { }
 // Make own style library instead of using materials
 // Prettier setup
 // Linter setup
+// Error service (Also, handle errors in services!)

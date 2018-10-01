@@ -45,6 +45,6 @@ export function reducer(
   return state;
 }
 
-export const getPizzasLoading = (state: HeroesState) => state.loading;
-export const getPizzasLoaded = (state: HeroesState) => state.loaded;
-export const getPizzas = (state: HeroesState) => state.data;
+export const getHeroesLoading = (state: HeroesState) => state.loading;
+export const getHeroesLoaded = (state: HeroesState) => state.loaded;
+export const getHeroes = (state: HeroesState) => state.data;

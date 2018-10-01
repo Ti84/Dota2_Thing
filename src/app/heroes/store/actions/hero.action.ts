@@ -2,7 +2,7 @@ import { Action } from "@ngrx/store";
 import { Hero } from "../../models/heroes";
 
   
-  // load pizzas
+  // load Heroes
   export const LOAD_HEROES = '[Heroes] Load Heroes';
   export const LOAD_HEROES_FAIL = '[Heroes] Load Heroes Failed';
   export const LOAD_HEROES_SUCCESS = '[Heroes] Load Heroes Success';
@@ -21,5 +21,5 @@ import { Hero } from "../../models/heroes";
       constructor(public payload: Hero[]) {}
   }
 
-  //action types
+  //Action Types
   export type HeroesAction = LoadHeroes | LoadHeroesFail | LoadHeroesSuccess;
