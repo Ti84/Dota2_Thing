@@ -1,0 +1,7 @@
+<div class="hero-list" *ngIf="!heroesLoading">
+  <div class="hero-tile" *ngFor="let hero of heroData">
+    <app-hero-tile (click)="heroClicked(hero.id)" [heroImageUrl]="getHeroImgUrl(hero.img)" [LocalizedHeroName]="hero.localizedName">
+    </app-hero-tile>
+  </div>
+</div>
+<app-spinner *ngIf="heroesLoading"></app-spinner>

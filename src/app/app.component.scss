@@ -1,8 +1,13 @@
-.app-content-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+$small-break: 900px;
+
+.app-container {
+  height: 100%;
+
   .app-content {
-    width: 75%;
+    height: calc(100% - 64px);
+
+    @media screen and (min-width: 900px) {
+      margin: 0 10%;
+    }
   }
 }

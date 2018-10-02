@@ -4,27 +4,38 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../framework/material/material.module';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { metaReducers } from './reducers';
+import { HeroesModule } from './heroes/heroes.module';
+import { EffectsModule } from '@ngrx/effects';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeroesComponent,
-    HomeComponent,
-    HeroesComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HeroesModule,
     HttpClientModule,
     MaterialModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    StoreModule.forRoot({}, { metaReducers }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// To Do:
+// Add Tests
+// Add Ngrx Store
+// Make own style library instead of using materials
+// Prettier setup
+// Linter setup
+// Error service (Also, handle errors in services!)
