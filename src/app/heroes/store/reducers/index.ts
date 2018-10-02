@@ -2,7 +2,7 @@ import * as fromHeroes from './hero.reducer';
 import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface HeroSummaryState {
-  heroes: fromHeroes.HeroesState
+  heroes: fromHeroes.HeroesState;
 }
 
 // Action Reducer Map - Type check for HeroSummaryState
@@ -15,6 +15,8 @@ export const getHeroesSummaryState = createFeatureSelector<HeroSummaryState>(
   'heroes'
 );
 
-export const getHeroes = createSelector(getHeroesSummaryState, (state: HeroSummaryState) => fromHeroes.getHeroes);
-export const getHeroesFail = createSelector(getHeroesSummaryState, (state: HeroSummaryState) => fromHeroes.getHeroesLoaded);
-export const getHeroesSuccess = createSelector(getHeroesSummaryState, (state: HeroSummaryState) => fromHeroes.getHeroesLoading);
+export const getHeroState = createSelector(getHeroesSummaryState, (state: HeroSummaryState) => state.heroes);
+
+export const getHeroes = createSelector(getHeroState, fromHeroes.getHeroes);
+export const getHeroesLoaded = createSelector(getHeroState, fromHeroes.getHeroesLoaded);
+export const getHeroesLoading = createSelector(getHeroState, fromHeroes.getHeroesLoading);

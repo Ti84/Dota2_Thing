@@ -6,10 +6,12 @@ import { HeroTileComponent } from './hero-tile/hero-tile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../../framework/material/material.module';
-import { reducers } from './store';
+import { reducers, effects } from './store';
 import { heroRoutes } from './heroes-routes.module';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,11 @@ import { StoreModule } from '@ngrx/store';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     MaterialModule,
     RouterModule.forChild(heroRoutes),
-    StoreModule.forFeature('heroes', reducers)
+    StoreModule.forFeature('heroes', reducers),
+    EffectsModule.forFeature(effects),
+    ComponentsModule
   ]
 })
 export class HeroesModule { }

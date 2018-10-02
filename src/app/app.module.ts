@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { metaReducers } from './reducers';
 import { HeroesModule } from './heroes/heroes.module';
+import { EffectsModule } from '@ngrx/effects';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { HeroesModule } from './heroes/heroes.module';
     HttpClientModule,
     MaterialModule,
     RouterModule.forRoot(routes),
-    StoreModule.forRoot({}, { metaReducers })
+    StoreModule.forRoot({}, { metaReducers }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

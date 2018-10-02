@@ -11,7 +11,7 @@ export const initialState: HeroesState = {
   data: [],
   loaded: false,
   loading: false
-}
+};
 
 export function reducer(
   state = initialState,
@@ -27,20 +27,22 @@ export function reducer(
     }
 
     case fromHeroes.LOAD_HEROES_SUCCESS: {
+      const data = action.payload;
       return {
         ...state,
         loading: false,
-        loaded: true
+        loaded: true,
+        data
       };
-    }  
-    
+    }
+
     case fromHeroes.LOAD_HEROES_FAIL: {
       return {
         ...state,
         loading: false,
         loaded: false
       };
-    }  
+    }
   }
   return state;
 }

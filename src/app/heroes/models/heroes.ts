@@ -1,4 +1,4 @@
-interface hero {
+interface HeroObject {
     id: number;
     img: string;
     localizedName: string;
@@ -7,7 +7,7 @@ interface hero {
 }
 
 export class Hero {
-    private heroList: Array<hero>[];
+    private heroList: Array<HeroObject>[];
 
     constructor(rawHeroListObject) {
         this.heroList = this.formatHeroList(rawHeroListObject);
