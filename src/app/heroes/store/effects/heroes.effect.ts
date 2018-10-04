@@ -21,5 +21,3 @@ export class HeroesEffects {
             ));
         }));
 }
-
-// https://youtu.be/xkUOQeGqIGI?list=PLW2eQOsUPlWJRfWGOi9gZdc3rE4Fke0Wv&t=889

@@ -1,4 +1,4 @@
-interface HeroObject {
+export interface HeroObject {
     id: number;
     img: string;
     localizedName: string;
@@ -6,24 +6,24 @@ interface HeroObject {
     primaryAttribute: string;
 }
 
-export class Hero {
-    private heroList: Array<HeroObject>[];
+// export class Hero {
+//     private heroList: Array<HeroObject>[];
 
-    constructor(rawHeroListObject) {
-        this.heroList = this.formatHeroList(rawHeroListObject);
-    }
+//     constructor(rawHeroListObject) {
+//         this.heroList = this.formatHeroList(rawHeroListObject);
+//     }
 
-    private formatHeroList(heroList) {
-        return heroList.map((hero) => ({
-            id: hero.id,
-            img: hero.img,
-            localizedName: hero.localized_name,
-            roles: hero.roles,
-            primaryAttribute: hero.primary_attr
-        }));
-    }
+//     private formatHeroList(heroList) {
+//         return heroList.map((hero) => ({
+//             id: hero.id,
+//             img: hero.img,
+//             localizedName: hero.localized_name,
+//             roles: hero.roles,
+//             primaryAttribute: hero.primary_attr
+//         }));
+//     }
 
-    getHeroList() {
-        return this.heroList;
-    }
-}
+//     getHeroList() {
+//         return this.heroList;
+//     }
+// }
