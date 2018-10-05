@@ -2,7 +2,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Params } from '@angular/ro
 import * as fromRouter from '@ngrx/router-store';
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 
-// exports meta reducer :)
+// exports meta reducer!
 export * from "./meta.reducer";
 
 // Router state stuff!
@@ -35,7 +35,7 @@ export class CustomSerializer implements fromRouter.RouterStateSerializer<Router
             state = state.firstChild;
         }
         const { params } = state;
-
+        console.log('froog');
         // anytime a new route is called, we get this new state for the current route! (Dope)
         return { url, queryParams, params};
     }

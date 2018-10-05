@@ -24,6 +24,10 @@ export class HeroesComponent implements OnInit {
     this.store.pipe(select(fromStore.getHeroesLoading)).subscribe(loading => this.heroesLoading = loading);
   }
 
+  heroClicked(id) {
+    this.router.navigate([`/heroes/${id}`]);
+  }
+
   getHeroImgUrl(imagePath) {
     return `https://api.opendota.com${imagePath}`;
   }

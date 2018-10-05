@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers, CustomSerializer } from './store';
+import { CustomSerializer, reducers, metaReducers } from './store';
 import { HeroesModule } from './heroes/heroes.module';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterStateSerializer } from '@ngrx/router-store';
@@ -41,3 +41,6 @@ export class AppModule { }
 // Linter setup
 // Error service (Also, handle errors in services!)
 // Connect https://github.com/zalmoxisus/redux-devtools-extension#usage to this app! (Makes state monitoring easier)
+
+// Good reference! https://github.com/UltimateAngular/ngrx-store-effects-app (Has route guards and such.
+// Also, this app's started from this course!)
