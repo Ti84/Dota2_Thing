@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from '../heroes.service';
-import { Hero } from '../models/heroes';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import * as fromStore from '../store';
@@ -16,15 +15,17 @@ export class HeroesComponent implements OnInit {
   errorMessage: string;
   heroesLoading: boolean;
 
-  constructor(private heroesService: HeroesService, private router: Router,
-    private store: Store<fromStore.HeroSummaryState>) { }
+  constructor(private router: Router, private store: Store<fromStore.HeroSummaryState>) { }
 
   ngOnInit() {
     this.store.dispatch(new fromStore.LoadHeroes);
     this.store.pipe(select(fromStore.getHeroes))
-      .subscribe(heroes => this.heroData = new Hero(heroes)
-      .getHeroList(), err => console.log(err));
+      .subscribe(heroes => this.heroData = heroes, err => console.log(err));
     this.store.pipe(select(fromStore.getHeroesLoading)).subscribe(loading => this.heroesLoading = loading);
+  }
+
+  heroClicked(id) {
+    this.router.navigate([`/heroes/${id}`]);
   }
 
   getHeroImgUrl(imagePath) {

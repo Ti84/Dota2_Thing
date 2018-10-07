@@ -8,10 +8,10 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { metaReducers } from './reducers';
+import { CustomSerializer, reducers, metaReducers } from './store';
 import { HeroesModule } from './heroes/heroes.module';
 import { EffectsModule } from '@ngrx/effects';
-import { SpinnerComponent } from './components/spinner/spinner.component';
+import { RouterStateSerializer } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -24,18 +24,23 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     HttpClientModule,
     MaterialModule,
     RouterModule.forRoot(routes),
-    StoreModule.forRoot({}, { metaReducers }),
+    StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([])
   ],
-  providers: [],
+  // Registering RouterStateSerializer but using our Custom serializer.
+  providers: [{provide: RouterStateSerializer, useClass: CustomSerializer}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
 // To Do:
 // Add Tests
-// Add Ngrx Store
+// Add Ngrx Store (SO MUCH BOILERPLATE M8)
 // Make own style library instead of using materials
 // Prettier setup
 // Linter setup
 // Error service (Also, handle errors in services!)
+// Connect https://github.com/zalmoxisus/redux-devtools-extension#usage to this app! (Makes state monitoring easier)
+
+// Good reference! https://github.com/UltimateAngular/ngrx-store-effects-app (Has route guards and such.
+// Also, this app's started from this course!)

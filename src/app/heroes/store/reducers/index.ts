@@ -14,9 +14,3 @@ export const reducers: ActionReducerMap<HeroSummaryState> = {
 export const getHeroesSummaryState = createFeatureSelector<HeroSummaryState>(
   'heroes'
 );
-
-export const getHeroState = createSelector(getHeroesSummaryState, (state: HeroSummaryState) => state.heroes);
-
-export const getHeroes = createSelector(getHeroState, fromHeroes.getHeroes);
-export const getHeroesLoaded = createSelector(getHeroState, fromHeroes.getHeroesLoaded);
-export const getHeroesLoading = createSelector(getHeroState, fromHeroes.getHeroesLoading);
