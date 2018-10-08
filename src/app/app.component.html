@@ -6,20 +6,22 @@
 
     <!-- DOTA 2 Section -->
 
-    <button mat-button [matMenuTriggerFor]="menu">Dota 2</button>
-    <mat-menu #menu="matMenu">
+    <button mat-button [matMenuTriggerFor]="dotaMenu">Dota 2</button>
+    <mat-menu #dotaMenu="matMenu">
       <button mat-menu-item [routerLink]="['/heroes']">Heroes</button>
     </mat-menu>
 
     <!-- Heroes Section -->
 
-    <button mat-button [matMenuTriggerFor]="menu">Heroes of the Storm</button>
-    <mat-menu #menu="matMenu">
+    <button mat-button [matMenuTriggerFor]="hotsMenu">Heroes of the Storm</button>
+    <mat-menu #hotsMenu="matMenu">
       <button mat-menu-item [routerLink]="['/heroes']">Heroes</button>
     </mat-menu>
 
-    <button mat-button [matMenuTriggerFor]="menu">League Of Legends</button>
-    <mat-menu #menu="matMenu">
+    <!-- League Section -->
+
+    <button mat-button [matMenuTriggerFor]="lolMenu">League Of Legends</button>
+    <mat-menu #lolMenu="matMenu">
       <button mat-menu-item [routerLink]="['/heroes']">Champions</button>
     </mat-menu>
 
