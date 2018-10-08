@@ -6,6 +6,10 @@ $small-break: 900px;
   .app-logo {
     display: flex;
     justify-content: center;
+
+    .logo-img {
+      height: 60px;
+    }
   }
 
   .app-primary-nav {
