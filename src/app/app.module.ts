@@ -34,6 +34,7 @@ import { RouterStateSerializer } from '@ngrx/router-store';
 export class AppModule { }
 
 // To Do:
+// Route Guards (Data verification)
 // Add Tests
 // Add Ngrx Store (SO MUCH BOILERPLATE M8)
 // Make own style library instead of using materials
@@ -42,5 +43,5 @@ export class AppModule { }
 // Error service (Also, handle errors in services!)
 // Connect https://github.com/zalmoxisus/redux-devtools-extension#usage to this app! (Makes state monitoring easier)
 
-// Good reference! https://github.com/UltimateAngular/ngrx-store-effects-app (Has route guards and such.
+// Good reference! https://github.com/UltimateAngular/ngrx-store-effects-app (Has route guards and such).
 // Also, this app's started from this course!)

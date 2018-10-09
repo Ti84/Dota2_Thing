@@ -1,7 +1,8 @@
-<div *ngIf="heroDetails">
-  {{heroDetails.id}}
-  {{this.getHeroImgUrl(heroDetails.id)}}
-  {{heroDetails.localizedName}}
-  {{heroDetails.roles}}
-  {{heroDetails.primaryAttribute}}
+<div *ngIf="heroDetails" class="hero-details">
+  <img class="hero-details__hero-img" src="{{this.getHeroImgUrl(heroDetails.img)}}" alt="{{heroDetails.localizedName}} portrait"/>
+  <ul class="hero-details__hero-description">
+    <li>{{heroDetails.localizedName}}</li>
+    <li>{{heroDetails.roles}}</li>
+    <li>{{heroDetails.primaryAttribute}}</li>
+  </ul>
 </div>

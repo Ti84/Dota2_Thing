@@ -3,10 +3,25 @@ $small-break: 900px;
 .app-container {
   height: 100%;
 
+  .app-logo {
+    display: flex;
+    justify-content: center;
+
+    .logo-img {
+      height: 60px;
+    }
+  }
+
+  .app-primary-nav {
+    @media screen and (min-width: $small-break) {
+      padding: 0 10%;
+    }
+  }
+
   .app-content {
     height: calc(100% - 64px);
 
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: $small-break) {
       margin: 0 10%;
     }
   }

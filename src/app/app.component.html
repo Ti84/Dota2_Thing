@@ -1,5 +1,31 @@
 <div class="app-container">
-  <mat-toolbar class="app-primary-nav" color="primary">Dota 2 Buddy</mat-toolbar>
+  <div class="app-logo">
+    <button mat-button [routerLink]="['']"><img class="logo-img" src="../assets/img/Logo.PNG" alt="Dota 2 Buddy Logo" /></button>
+  </div>
+  <mat-toolbar class="app-primary-nav" color="primary">
+
+    <!-- DOTA 2 Section -->
+
+    <button mat-button [matMenuTriggerFor]="dotaMenu">Dota 2</button>
+    <mat-menu #dotaMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/heroes']">Heroes</button>
+    </mat-menu>
+
+    <!-- Heroes Section -->
+
+    <button mat-button [matMenuTriggerFor]="hotsMenu">Heroes of the Storm</button>
+    <mat-menu #hotsMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/heroes']">Heroes</button>
+    </mat-menu>
+
+    <!-- League Section -->
+
+    <button mat-button [matMenuTriggerFor]="lolMenu">League Of Legends</button>
+    <mat-menu #lolMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/heroes']">Champions</button>
+    </mat-menu>
+
+  </mat-toolbar>
   <div class="app-content">
     <router-outlet class="app-content"></router-outlet>
   </div>
