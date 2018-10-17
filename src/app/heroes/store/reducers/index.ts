@@ -1,5 +1,5 @@
 import * as fromHeroes from './hero.reducer';
-import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
+import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 
 export interface HeroSummaryState {
   heroes: fromHeroes.HeroesState;

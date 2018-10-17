@@ -1,3 +1,5 @@
+// Reducers: Pure functions that change the class immutably. NO MUTATIONS!
+
 import * as fromHeroes from '../actions/hero.action';
 import { HeroObject } from '../../models/heroes';
 

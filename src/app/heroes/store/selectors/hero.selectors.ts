@@ -1,3 +1,5 @@
+// Selectors allow us to select slices of the state.
+
 // Grabbing from root.
 import * as fromRoot from '../../../store';
 // makes imports easier, so we don't have to destructure as much. (We need an interface and a getHeroesSummaryState ref)

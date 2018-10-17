@@ -1,0 +1,15 @@
+<!-- <div class="toast-message-wrapper">
+  <aside let message of $messages | async>
+    <div class="notification" *ngIf="!message.dismissed" [ngClass]="{
+          'info-notification': message.style='info',
+          'danger-notification': message.style='danger',
+          'is-success': message.style='success'
+        }">
+      <button class="dismiss-notification" (click)="dismissNotification(message.$key)"></button>
+    </div>
+  </aside>
+</div> -->
+
+<div *ngIf="messages$">
+  <div *ngFor="let message of messages$ | async">{{message.content}}</div>
+</div>

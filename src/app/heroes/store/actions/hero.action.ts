@@ -1,3 +1,5 @@
+// Actions: Actions that can be dispatched from a component.
+
 import { Action } from '@ngrx/store';
 
   // load Heroes

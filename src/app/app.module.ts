@@ -12,6 +12,8 @@ import { CustomSerializer, reducers, metaReducers } from './store';
 import { HeroesModule } from './heroes/heroes.module';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterStateSerializer } from '@ngrx/router-store';
+import { GlobalErrorModule } from './global-error/global-error.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { RouterStateSerializer } from '@ngrx/router-store';
     MaterialModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    GlobalErrorModule,
+    ComponentsModule
   ],
   // Registering RouterStateSerializer but using our Custom serializer.
   providers: [{provide: RouterStateSerializer, useClass: CustomSerializer}],
