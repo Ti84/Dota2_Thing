@@ -3,21 +3,21 @@
 import { Injectable } from "@angular/core";
 import { Effect, Actions, ofType } from "@ngrx/effects";
 import * as errorActions from "../actions/error.action";
+import { map, tap } from "rxjs/operators";
 import * as fromStore from "../../../components/store"
-import { mapTo } from "rxjs/operators";
 
 @Injectable()
-export class HeroesEffects {
+export class ErrorEffects {
   constructor(private actions$: Actions) {}
 
   @Effect()
   loadError$ = this.actions$.pipe(
     ofType(errorActions.LOAD_ERROR),
-    mapTo(
-      new fromStore.DisplayMessage({
-        content: "BLAH",
+    map((action: errorActions.LoadError) => {
+      return new fromStore.DisplayMessage({
+        content: action.payload,
         style: "danger"
       })
-    )
+    })
   );
 }

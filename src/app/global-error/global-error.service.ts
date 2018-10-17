@@ -22,7 +22,10 @@ export class GlobalErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        this.store.dispatch(new LoadError(error));
+        this.store.dispatch(new LoadError(`An Error Occurred: Status: ${error.status}, ${error.message}`));
+        
+        // This continues the error without swallowing it! Very important to include here.
+        // This allows us to handle error conditions in our respective pages.
         return throwError(error);
       })
     );

@@ -1,27 +1,31 @@
 // Reducers: Pure functions that change the class immutably. NO MUTATIONS!
 
 import * as fromError from "../actions/error.action";
+import { Message } from "../../../components/models/message";
 
 export interface ErrorState {
-  entity: {}
-}
+  entities: Message[]
+};
+
+export const initialState: ErrorState = {
+  entities: []
+};
 
 export function reducer(
-  state: any = null,
+  state = initialState,
   action: fromError.ErrorAction
 ): ErrorState {
   const globalError = action.payload;
 
   switch (action.type) {
     case fromError.LOAD_ERROR: {
-    console.log('It werked');
       return {
         ...state,
-        entity: globalError
+        entities: [...state.entities, globalError]
       };
     }
   }
   return state;
 }
 
-export const getGlobalError = (state: ErrorState) => state.entity;
+export const getGlobalError = (state: ErrorState) => state.entities;
