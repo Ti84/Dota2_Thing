@@ -35,7 +35,6 @@ export class CustomSerializer implements fromRouter.RouterStateSerializer<Router
             state = state.firstChild;
         }
         const { params } = state;
-        console.log('froog');
         // anytime a new route is called, we get this new state for the current route! (Dope)
         return { url, queryParams, params};
     }

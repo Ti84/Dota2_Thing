@@ -1,0 +1,16 @@
+.home-row {
+    display: flex;
+    margin-top: 20px;
+    > button {
+        margin-right: 15px;
+    }
+    .home-row__info-btn {
+        background-color: #8a2be2;
+    }
+    .home-row__success-btn {
+        background-color: greenyellow;
+    }
+    .home-row__error-btn {
+        background-color: tomato;
+    }
+}

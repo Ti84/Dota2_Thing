@@ -1,3 +1,5 @@
+// Effect: a side effect from an action occuring (ex. if LOAD_HEROES is triggered, this effect happens)
+
 import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import * as heroActions from '../actions/hero.action';
